@@ -9,8 +9,9 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-           firstlast6Example();
+        firstlast6Example();
         firstlast6Example2();
+        firstlast6Example3();
 
 
         }
@@ -38,7 +39,7 @@ public class Main {
     }
     private static void firstlast6Example3() {
         List<Integer> myList = new ArrayList<Integer>();
-        myList.add(6);
+        myList.add(13);
         myList.add(6);
         myList.add(1);
         myList.add(2);

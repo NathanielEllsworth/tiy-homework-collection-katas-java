@@ -7,14 +7,13 @@ import java.util.List;
  */
 public class kata {
     public static boolean firstLast6(List<Integer> x) {
-        x.get(0); // To get first
-        x.get(x.size()-1); //to get last
-        if(!(6==0 || 6==x.size()-1)){
 
-    return true;}
-        else {
-            return false;
+        if(x.get(0) == 6 || x.get(x.size()-1) == 6){
+            return true;
+        }
+        else {return false;
         }
    }
 
 }
+//collection.reverse
