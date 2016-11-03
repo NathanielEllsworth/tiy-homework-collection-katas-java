@@ -259,11 +259,11 @@ public class Main {
 
 
 
-    // (.6      //having a little trouble here :/ all my hash functions are '=' not ':'
+    // (.6
     private static void mapBullyv1() {
         HashMap<String, String> data = new HashMap<>();
-        data.put("a", "candy");
         data.put("b", "dirt");
+        data.put("a", "candy");
         Object x = data.clone();
         kata.mapBully(data);
         System.out.printf("mapBully(%s) -> %s\n", x, data);
@@ -271,7 +271,6 @@ public class Main {
     }
     private static void mapBullyv2() {
         HashMap<String, String> data = new HashMap<>();
-        data.put("b", "candy");
         data.put("a", "candy");
         Object x = data.clone();
         kata.mapBully(data);
@@ -362,47 +361,32 @@ public class Main {
     }
 
 
-        //VVVVVV   Need help with these last two    VVVVVVV
+
 
 
     // (.9
     private static void wordLenv1() {
-        ArrayList<String> data = new ArrayList<>();
-        data.add("this");
-        data.add("is");
-        data.add("hard");
-        data.add("ouch");
-        Object x = data.clone();
-        kata.wordLen(data);
-        System.out.printf("wordLen(%s) -> %s\n", x, data);
+        String[] string = new String[]{"a", "bb", "a", "bb"};
+        String[] saved = string.clone();
+        Map<String, Integer> data =  kata.wordLen(string);
+        System.out.println("wordLen(\"" + Arrays.toString(saved) + "\") -> (\""+(data)+"\")");
+        System.out.println("");
     }
-
-
-
-
     private static void wordLenv2() {
-        ArrayList<String> data = new ArrayList<>();
-        data.add("this");
-        data.add("that");
-        data.add("this");
-        data.add("that");
-        Object x = data.clone();
-        kata.wordLen(data);
-        System.out.printf("wordLen(%s) -> %s\n", x, data);
+        String[] tmp = new String[]{"this", "and", "that", "and"};
+        String[] saved = tmp.clone();
+        Map<String, Integer> data =  kata.wordLen(tmp);
+        System.out.println("wordLen(\"" + Arrays.toString(saved) + "\") -> (\""+(data)+"\")");
+        System.out.println("");
     }
-
-
-
-
     private static void wordLenv3() {
-        ArrayList<String> data = new ArrayList<>();
-        data.add("a");
-        data.add("dd");
-        data.add("a");
-        data.add("bb");
-        Object x = data.clone();
-        kata.wordLen(data);
-        System.out.printf("wordLen(%s) -> %s\n", x, data);
+        String[] tmp = new String[]{"code", "code", "code", "bug"};
+        String[] saved = tmp.clone();
+        Map<String, Integer> data =  kata.wordLen(tmp);
+        System.out.println("wordLen(\"" + Arrays.toString(saved) + "\") -> (\""+(data)+"\")");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
     }
 
 
@@ -412,14 +396,43 @@ public class Main {
 
 
     private static void indexWordsv1(){
-        String[] tmp = new String[]{"aardvark", "apple", "zamboni", "phone"};
-        String[] saved = tmp.clone();
-
-        Map<String, String> map =kata.indexWords(tmp);
-        System.out.println("IndexWords(\"" + Arrays.toString(saved) + "\") -> (\""+(map)+"\")");
+        ArrayList<String>  data = new ArrayList<>();
+        data.add("aardvark");
+        data.add("apple");
+        data.add("zamboni");
+        data.add("phone");
+        ArrayList<String>  saved = (ArrayList<String>) data.clone();
+        Map<String, List>  stringList =kata.indexwords(data);
+        System.out.printf("IndexWords(%s) -> %s\n", saved, stringList);
+        System.out.println("");
+    }
+    private static void indexWordsv2(){
+        ArrayList<String>  data = new ArrayList<>();
+        data.add("elephant");
+        ArrayList<String>  saved = (ArrayList<String>) data.clone();
+        Map<String, List>  stringList =kata.indexwords(data);
+        System.out.printf("IndexWords(%s) -> %s\n", saved, stringList);
+        System.out.println("");
+    }
+    private static void indexWordsv3(){
+        ArrayList<String>  data = new ArrayList<>();
+        data.add("");
+        ArrayList<String>  saved = (ArrayList<String>) data.clone();
+        Map<String, List>  stringList =kata.indexwords(data);
+        System.out.printf("IndexWords(%s) -> %s\n", saved, stringList);
+        System.out.println("");
+    }
+    private static void indexWordsv4(){
+        ArrayList<String>  data = new ArrayList<>();
+        data.add("\"\"");
+        ArrayList<String>  saved = (ArrayList<String>) data.clone();
+        Map<String, List>  stringList =kata.indexwords(data);
+        System.out.printf("IndexWords(%s) -> %s\n", saved, stringList);
+        System.out.println("");
+        System.out.println("");
     }
 
-    
+
 
 }
 

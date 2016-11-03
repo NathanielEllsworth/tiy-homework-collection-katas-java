@@ -120,7 +120,7 @@ public class kata {
 
 
     // (.9
-    public static Map<String, Integer> wordLen(ArrayList<String> strings) {
+    public static Map<String, Integer> wordLen(String[] strings) {
 
         Map<String, Integer> map = new HashMap<>();
         for (String str : strings) {
@@ -137,19 +137,30 @@ public class kata {
 
 
     // (.10
-    public static HashMap<String, String> indexWords(String[] x) {
+    public static Map indexwords(List<String> z) {
 
-        Map<String, String> map = new HashMap<>();
-        for (int i = 0; i < x.length; i++) {
-            String key = String.valueOf(x[i].charAt(0));
-            if (map.containsKey(key)) {
-                String val = map.get(key) + x[i];
-                map.put(key, val);
-            } else {
-                map.put(key, x[i]);
+        Map<String, List> wordsMap =  new HashMap<>();
+
+        for (int i= 0; i < z.size(); i++){
+
+            if (z.get(i).isEmpty()) continue;
+          //  if (z.get(i).contains("\"")) z.remove(i);   //<<<<<<<<<<<<<<<<<<<<<<<<<< No Idea.
+
+            String ourkey = String.valueOf(z.get(i).charAt(0));
+            String ourvalue =  z.get(i).toString();
+
+            if (wordsMap.containsKey(ourkey)) {
+                List myWordsList = wordsMap.get(ourkey);
+                myWordsList.add(ourvalue);
+                wordsMap.put(ourkey, myWordsList);
             }
-        }return (HashMap<String, String>) map;
-    }
+            else  {
+                List myWordsList = new ArrayList();
+                myWordsList.add(ourvalue);
+                wordsMap.put(ourkey, myWordsList);
+            }
 
+        }
+        return wordsMap;
+    }
 }
-//collection.reverse
